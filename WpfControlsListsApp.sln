@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControlsListsApp", "WpfControlsListsApp\WpfControlsListsApp.csproj", "{ABBF72BB-9CEF-4538-A0B1-D5D1382E4C05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABBF72BB-9CEF-4538-A0B1-D5D1382E4C05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABBF72BB-9CEF-4538-A0B1-D5D1382E4C05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABBF72BB-9CEF-4538-A0B1-D5D1382E4C05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABBF72BB-9CEF-4538-A0B1-D5D1382E4C05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59878639-DBC4-4D66-8EF3-1F82CE520FBD}
+	EndGlobalSection
+EndGlobal
