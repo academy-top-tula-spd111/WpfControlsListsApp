@@ -19,10 +19,11 @@ namespace WpfControlsListsApp
     {
         public string? Name { set; get; }
         public int Age { set; get; }
+        public bool Married { set; get; }
 
         public override string ToString()
         {
-            return $"Name: {Name}, Age: {Age}";
+            return $"Name: {Name}, Age: {Age} Married: {Married}";
         }
     }
 
@@ -31,13 +32,14 @@ namespace WpfControlsListsApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<User> users;
         public MainWindow()
         {
             InitializeComponent();
 
             List<string> itemsList = new List<string>() { "Один", "Два", "Три", "Четыре" };
 
-            List<User> users = new List<User>()
+            users = new List<User>()
             {
                 new User() { Name = "Bob", Age = 23 },
                 new User() { Name = "Tim", Age = 41 },
@@ -47,7 +49,17 @@ namespace WpfControlsListsApp
                 new User() { Name = "Ben", Age = 44 }
             };
 
+            TabItem tabNew = new();
+            tabNew.Header = "Tab 3";
+
+            ListBox listBox = new();
             listBox.ItemsSource = users;
+            tabNew.Content = listBox;
+
+            tabControl.Items.Add(tabNew);
+
+            //listBox.ItemsSource = users;
+
 
             //listBox.Items.Add("Item 3");
             //listBox.Items.Insert(1, "Item insert");
@@ -58,22 +70,32 @@ namespace WpfControlsListsApp
 
         private void listBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            User selectUser = (sender as ListBox).SelectedItem as User;
-            MessageBox.Show(selectUser.ToString());
+            //User selectUser = (sender as ListBox).SelectedItem as User;
+            //MessageBox.Show(selectUser.ToString());
         }
 
         private void listBox_Selected(object sender, RoutedEventArgs e)
         {
-            if(listBox.SelectedItem is not null)
-            {
-                string msg = "";
-                foreach(var item in listBox.SelectedItems) 
-                {
-                    msg += (item as User).ToString() + "\n";
-                }
-                MessageBox.Show(msg);
-            }
-                //txtUser.Text = (listBox.SelectedItem as User).ToString();
+            //if(listBox.SelectedItem is not null)
+            //{
+            //    string msg = "";
+            //    foreach(var item in listBox.SelectedItems) 
+            //    {
+            //        msg += (item as User).ToString() + "\n";
+            //    }
+            //    MessageBox.Show(msg);
+            //}
+            //    //txtUser.Text = (listBox.SelectedItem as User).ToString();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_TextInput(object sender, TextCompositionEventArgs e)
+        {
+            
         }
     }
 }

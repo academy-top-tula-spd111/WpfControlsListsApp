@@ -6,16 +6,19 @@
         xmlns:local="clr-namespace:WpfControlsListsApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
+    <StackPanel x:Name="stack">
         
         <TextBlock x:Name="txtUser"
                    FontSize="30"/>
+        <!--
         <ListBox x:Name="listBox"
-                 FontSize="30"
+                 FontSize="24"
                  DisplayMemberPath="Name"
                  SelectionMode="Extended"
                  MouseDoubleClick="listBox_MouseDoubleClick"
                  SelectionChanged="listBox_Selected"/>
+        -->
+        <Button FontSize="30" Click="Button_Click">Click me</Button>
         <!--
         <ListBox FontSize="30">
             <ListBoxItem Margin="10">
@@ -29,6 +32,59 @@
                 <TextBlock Text="Item 2"/>
             </StackPanel>
         </ListBox>
-        -->
+        
+        <ComboBox
+                x:Name="cmb"
+                FontSize="24"
+                IsEditable="True"
+                StaysOpenOnEdit="True">
+            <ComboBoxItem>
+                <TextBlock>Москва</TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem IsSelected="True">
+                <TextBlock>Саратов</TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock>Тула</TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem IsSelected="True">
+                <TextBlock>Самара</TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock>Туапсе</TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem IsSelected="True">
+                <TextBlock>Новосибирск</TextBlock>
+            </ComboBoxItem>
+            
+        </ComboBox>
+       
+        <ListView x:Name="lstView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name}">Имя</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Age}">Возраст</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Married}">Женат</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+         -->
+        <TabControl FontSize="30" x:Name="tabControl">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/icon1.png"/>
+                        <TextBlock Text="Item 1"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <TextBlock>Information 1</TextBlock>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem Header="Tab 2">
+                <TextBlock>Information 2</TextBlock>
+            </TabItem>
+        </TabControl>
+        
     </StackPanel>
 </Window>
